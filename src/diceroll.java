@@ -1,6 +1,6 @@
 
 
-	package learning_random;
+	
 
 	import java.awt.Dimension;
 	import java.awt.image.BufferedImage;
@@ -29,12 +29,12 @@
 		
 		public void run(){
 			try {
-				oneImg = ImageIO.read(this.getClass().getResourceAsStream("http://www.kidsmathgamesonline.com/images/pictures/numbers600/number1.jpg"));
-				twoImg = ImageIO.read(this.getClass().getResourceAsStream("http://pngimg.com/uploads/number2/Number%202%20PNG%20images%20free%20download_PNG14949.png"));
-				threeImg = ImageIO.read(this.getClass().getResourceAsStream("http://www.clker.com/cliparts/x/B/x/Y/R/L/number-3-hi.png"));
-				fourImg = ImageIO.read(this.getClass().getResourceAsStream("https://www.brainz.org/wp-content/uploads/2017/06/4-1.png"));
-				fiveImg = ImageIO.read(this.getClass().getResourceAsStream("http://www.clker.com/cliparts/D/T/x/K/i/d/orange-5-md.png"));
-				sixImg = ImageIO.read(this.getClass().getResourceAsStream("https://thetomatos.com/wp-content/uploads/2016/05/6-cliparts-2.png"));
+				oneImg = ImageIO.read(this.getClass().getResourceAsStream("number1.jpg"));
+				twoImg = ImageIO.read(this.getClass().getResourceAsStream("number2.png"));
+				threeImg = ImageIO.read(this.getClass().getResourceAsStream("number3.png"));
+				fourImg = ImageIO.read(this.getClass().getResourceAsStream("number4.png"));
+				fiveImg = ImageIO.read(this.getClass().getResourceAsStream("number5.png"));
+				sixImg = ImageIO.read(this.getClass().getResourceAsStream("number6.png"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -44,24 +44,25 @@
 			rollButton.addActionListener((e)->{
 				
 				//1. Make randomChoice equal to a random number between 1 and 6
-				int randomChoice = 0;
-				
+				Random r = new Random();
+				//int randomChoice = (int)(Math.random()*6+1);
+				int randomChoice = r.nextInt(6)+1;
 				
 				//2. Fix the code below so that it displays the correct image
-				if(randomChoice == 0){
+				if(randomChoice == 1){
 					label.setIcon(new ImageIcon(oneImg));
-				}else if(randomChoice == 0){
+				}else if(randomChoice == 2){
 					label.setIcon(new ImageIcon(twoImg));
-				}else if(randomChoice == 0){
+				}else if(randomChoice == 3){
 					label.setIcon(new ImageIcon(threeImg));
 				}
-				else if(randomChoice == 0){
+				else if(randomChoice == 4){
 					label.setIcon(new ImageIcon(fourImg));
 				}
-				else if(randomChoice == 0){
+				else if(randomChoice == 5){
 					label.setIcon(new ImageIcon(fiveImg));
 				}
-				else{
+				else if(randomChoice == 6){
 					label.setIcon(new ImageIcon(sixImg));
 				}
 			});
