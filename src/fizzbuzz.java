@@ -19,12 +19,33 @@
 	public class fizzbuzz {
 		public static void main(String[] args)
 		{
+
 		for(int hi = 1; hi < 21; hi++)
 		{
-			System.out.println(hi);
+			
+		System.out.println(hi);
+			
+			if((hi%3 ==0)&&(hi%5 ==0))
+				{
+				if(true) {
+					System.out.println("FizzBuzz");
+				}
+				}
+				else {
+			if(hi%5 == 0)
+			{
+				System.out.println("Buzz");
+			}
+			if(hi%3 == 0)
+			{
+				System.out.println("Fizz");
+				
+			}
+		}
 		}
 		}
 	}
-
+		
+		
 
 
